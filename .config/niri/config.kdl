@@ -1,0 +1,177 @@
+cursor          { hide-when-typing; }
+environment     { EDITOR "nvim"; }
+hotkey-overlay  { skip-at-startup; }
+overview        { zoom 0.4; }
+prefer-no-csd
+screenshot-path "~/Изображения/Снимки экрана/%Y-%m-%d %H-%M-%S.png"
+
+input {
+  keyboard {
+    xkb {
+      layout "us,ru"
+      options "grp:alt_shift_toggle"
+    }
+  }
+  touchpad {
+    natural-scroll
+    tap
+  }
+}
+
+output "eDP-1"    {
+  position x=1920 y=0
+  scale 1.2
+}
+output "HDMI-A-1" {
+  //transform "90"
+  position x=0 y=0
+  scale 1.2
+}
+
+layer-rule {
+  match namespace="^wallpaper$"
+  place-within-backdrop true
+}
+
+layout {
+  background-color     "transparent"
+  border               { off; }
+  default-column-width { proportion 0.5; }
+  focus-ring           { off; }
+  gaps                 5
+
+  preset-column-widths {
+    proportion 0.25
+    proportion 0.5
+    proportion 0.75
+  }
+
+  preset-window-heights {
+    proportion 0.5
+    proportion 1.0
+  }
+}
+
+spawn-at-startup "gammastep" "-O" "3000"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/arch/Изображения/Обои/w"
+
+window-rule {
+  clip-to-geometry       true
+  geometry-corner-radius 10
+}
+
+window-rule {
+  match title="clock"
+
+  open-floating true
+  max-width     450
+  min-width     450
+  max-height    142
+  min-height    142
+}
+
+window-rule {
+  match app-id="gimp"
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match title="btop"
+
+  open-maximized true
+}
+
+window-rule {
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+
+  block-out-from "screen-capture"
+}
+
+window-rule {
+  match app-id="org.gnome.Epiphany"
+
+  open-focused false
+}
+
+binds {
+  Print         { screenshot; }
+  Super+Alt+S   { screenshot; }
+  Super+Q       { close-window; }
+  Super+Shift+Q { quit; }
+
+  Super+Alt+G      { spawn "gammastep" "-O" "3000"; }
+  Super+Ctrl+Alt+H { spawn "systemctl" "poweroff"; }
+  Super+Ctrl+Alt+R { spawn "systemctl" "reboot"; }
+  Super+E          { spawn "kitty" "yazi"; }
+  Super+O          { spawn "kitty" "python" "/home/arch/Синхронизация/.niri-scripts/niri.py" "pull"; }
+  Super+P          { spawn "kitty" "python" "/home/arch/Синхронизация/.niri-scripts/niri.py" "push"; }
+  Super+Return     { spawn "kitty"; }
+  Super+S          { spawn "keepassxc"; }
+  Super+Semicolon  { spawn "kitty" "-T" "clock" "/home/arch/.niri_show_clock"; }
+  Super+Shift+T    { spawn "chromium" "--ozone-platform=wayland" "https://web.vk.me"; }
+  Super+T          { spawn "chromium" "--ozone-platform=wayland" "https://web.telegram.org/k"; }
+  Super+V          { spawn "kitty" "-T" "btop" "btop"; }
+  Super+W          { spawn "chromium" "--ozone-platform=wayland"; }
+
+  XF86AudioRaiseVolume  allow-when-locked=true { spawn "pamixer" "-i" "5"; }
+  XF86AudioLowerVolume  allow-when-locked=true { spawn "pamixer" "-d" "5"; }
+  XF86AudioMute         allow-when-locked=true { spawn "pamixer" "-t"; }
+  XF86AudioMicMute      allow-when-locked=true { spawn "pamixer" "--default-source" "-t"; }
+  XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+10%"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "10%-"; }
+
+  Super+H                     { focus-column-left; }
+  Super+WheelScrollUp         { focus-column-left; }
+  Super+L                     { focus-column-right; }
+  Super+WheelScrollDown       { focus-column-right; }
+  Super+Ctrl+H                { move-column-left; }
+  Super+Ctrl+L                { move-column-right; }
+  Super+J                     { focus-window-down; }
+  Super+K                     { focus-window-up; }
+  Super+Ctrl+J                { move-window-down; }
+  Super+Ctrl+K                { move-window-up; }
+  Super+Comma                 { consume-window-into-column; }
+  Super+Period                { expel-window-from-column; }
+  Super+BracketLeft           { consume-or-expel-window-left; }
+  Super+BracketRight          { consume-or-expel-window-right; }
+  Super+Shift+Minus           { set-window-height "-10%"; }
+  Super+Shift+Equal           { set-window-height "+10%"; }
+  Super+Shift+R               { switch-preset-window-height; }
+  Super+Shift+F               { fullscreen-window; }
+  Super+Minus                 { set-column-width "-10%"; }
+  Super+Equal                 { set-column-width "+10%"; }
+  Super+R                     { switch-preset-column-width; }
+  Super+F                     { maximize-column; }
+  Super+C                     { center-column; }
+  Super+Shift+H               { focus-monitor-left; }
+  Super+Shift+J               { focus-monitor-down; }
+  Super+Shift+K               { focus-monitor-up; }
+  Super+Shift+L               { focus-monitor-right; }
+  Super+Shift+Ctrl+H          { move-column-to-monitor-left; }
+  Super+Shift+Ctrl+J          { move-column-to-monitor-down; }
+  Super+Shift+Ctrl+K          { move-column-to-monitor-up; }
+  Super+Shift+Ctrl+L          { move-column-to-monitor-right; }
+  Super+U                     { focus-workspace-down; }
+  Super+Shift+WheelScrollDown { focus-workspace-down; }
+  Super+I                     { focus-workspace-up; }
+  Super+Shift+WheelScrollUp   { focus-workspace-up; }
+  Super+1                     { focus-workspace 1; }
+  Super+2                     { focus-workspace 2; }
+  Super+3                     { focus-workspace 3; }
+  Super+4                     { focus-workspace 4; }
+  Super+5                     { focus-workspace 5; }
+  Super+6                     { focus-workspace 6; }
+  Super+7                     { focus-workspace 7; }
+  Super+8                     { focus-workspace 8; }
+  Super+9                     { focus-workspace 9; }
+  Super+Ctrl+U                { move-column-to-workspace-down; }
+  Super+Ctrl+I                { move-column-to-workspace-up; }
+  Super+Ctrl+1                { move-column-to-workspace 1; }
+  Super+Ctrl+2                { move-column-to-workspace 2; }
+  Super+Ctrl+3                { move-column-to-workspace 3; }
+  Super+Ctrl+4                { move-column-to-workspace 4; }
+  Super+Ctrl+5                { move-column-to-workspace 5; }
+  Super+Ctrl+6                { move-column-to-workspace 6; }
+  Super+Ctrl+7                { move-column-to-workspace 7; }
+  Super+Ctrl+8                { move-column-to-workspace 8; }
+  Super+Ctrl+9                { move-column-to-workspace 9; }
+  Super+Shift+U               { move-workspace-down; }
+  Super+Shift+I               { move-workspace-up; }
+}
