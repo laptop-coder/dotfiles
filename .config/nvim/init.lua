@@ -1,0 +1,8 @@
+require('core.lazy')
+require('core.settings')
+require('core.keymaps')
+require('core.lsp')
+require('plugins.nvim-cmp')
+require('plugins.telescope')
+require('plugins.mini')
+require('plugins.live-preview')
