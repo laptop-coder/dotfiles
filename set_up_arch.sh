@@ -110,6 +110,7 @@ elif [ $1 == 5 ]; then
   nautilus\
   gnome-boxes\
   go\
+  prettier\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
