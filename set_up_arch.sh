@@ -57,7 +57,7 @@ elif [ $1 == 5 ]; then
   alacritty\
   swaybg\
   swayidle\
-  swaylock\
+  hyprlock\
   xwayland-satellite\
   chromium\
   dunst\
@@ -108,6 +108,8 @@ elif [ $1 == 5 ]; then
   vim\
   gimp\
   nautilus\
+  gnome-boxes\
+  go\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
