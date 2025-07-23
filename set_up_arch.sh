@@ -107,6 +107,7 @@ elif [ $1 == 5 ]; then
   base-devel\
   vim\
   gimp\
+  nautilus\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
