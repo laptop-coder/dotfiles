@@ -24,6 +24,7 @@ elif [ $1 == 2 ]; then
   locale-gen
   echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
   echo "archlinux" > /etc/hostname
+  mkdir /boot/efi
   mount /dev/nvme0n1p1 /boot/efi
   grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
   grub-mkconfig -o /boot/grub/grub.cfg
