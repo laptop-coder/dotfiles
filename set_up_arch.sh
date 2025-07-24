@@ -110,6 +110,11 @@ elif [ $1 == 5 ]; then
   nautilus\
   gnome-boxes\
   go\
+  gopls\
+  ruff\
+  tinymist\
+  rust-analyzer\
+  typescript-language-server\
   prettier\
   xdg-desktop-portal-gtk\
   xdg-desktop-portal-wlr\
