@@ -111,6 +111,8 @@ elif [ $1 == 5 ]; then
   gnome-boxes\
   go\
   prettier\
+  xdg-desktop-portal-gtk\
+  xdg-desktop-portal-wlr\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
