@@ -118,6 +118,8 @@ elif [ $1 == 5 ]; then
   prettier\
   xdg-desktop-portal-gtk\
   xdg-desktop-portal-wlr\
+  flatpak\
+  nix\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
