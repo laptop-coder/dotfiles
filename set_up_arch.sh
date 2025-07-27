@@ -120,6 +120,7 @@ elif [ $1 == 5 ]; then
   xdg-desktop-portal-wlr\
   flatpak\
   nix\
+  docker-buildx\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
