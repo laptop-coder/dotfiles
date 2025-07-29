@@ -121,6 +121,7 @@ elif [ $1 == 5 ]; then
   flatpak\
   nix\
   docker-buildx\
+  mpv\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
