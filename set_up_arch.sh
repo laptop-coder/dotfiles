@@ -122,6 +122,7 @@ elif [ $1 == 5 ]; then
   nix\
   docker-buildx\
   mpv\
+  mkcert\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
