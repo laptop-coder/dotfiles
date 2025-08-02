@@ -126,6 +126,8 @@ elif [ $1 == 5 ]; then
   noto-fonts-emoji\
   waybar\
   wofi\
+  fastfetch\
+  blueman\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
