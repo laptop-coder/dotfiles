@@ -123,6 +123,7 @@ elif [ $1 == 5 ]; then
   docker-buildx\
   mpv\
   mkcert\
+  noto-fonts-emoji\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
