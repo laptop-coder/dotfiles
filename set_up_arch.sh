@@ -124,6 +124,8 @@ elif [ $1 == 5 ]; then
   mpv\
   mkcert\
   noto-fonts-emoji\
+  waybar\
+  wofi\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
