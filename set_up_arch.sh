@@ -119,7 +119,6 @@ elif [ $1 == 5 ]; then
   xdg-desktop-portal-gtk\
   xdg-desktop-portal-wlr\
   flatpak\
-  nix\
   docker-buildx\
   mpv\
   mkcert\
@@ -128,6 +127,7 @@ elif [ $1 == 5 ]; then
   wofi\
   fastfetch\
   blueman\
+  jp2a\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
