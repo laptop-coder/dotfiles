@@ -1,0 +1,81 @@
+{
+    // ─────General─Settings───────────────────────────────────────────────────
+
+    "layer": "bottom",
+    "spacing": 30,
+
+    // ─────Left───────────────────────────────────────────────────────────────
+
+    "modules-left": [
+        "wireplumber",
+        "battery",
+        "tray"
+    ],
+
+    "wireplumber": {
+        "format": "{icon}  {volume} %",
+        "format-icons": ["", "", " "],
+        "format-muted": "   Muted",
+        "max-volume": 100,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 1
+    },
+
+    "battery": {
+        "format": "{icon} {capacity} %",
+        "format-charging": "󰂄 {capacity} %",
+        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+        "full-at": 96
+    },
+
+    // ─────Center─────────────────────────────────────────────────────────────
+
+    "modules-center": [
+        "niri/workspaces"
+    ],
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+
+    // ─────Right──────────────────────────────────────────────────────────────
+
+    "modules-right": [
+        "niri/language",
+        "clock",
+        "custom/notifications"
+    ],
+
+    "custom/notifications": {
+        "exec": "source $HOME/.config/waybar/scripts/dunst.sh",
+        "exec-on-event": true,
+        "format": "{}",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 60, // in seconds
+        "tooltip": false
+    },
+
+    "niri/language": {
+    	"format": "󰗊  {}",
+	    "format-en": "English",
+    	"format-ru": "Русский"
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "   {:%H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "months": "<span color='#d7bc32'><b>{}</b></span>",
+                "days": "<span color='#b9bbbd'><b>{}</b></span>",
+                "weekdays": "<span color='#e6edf9'><b><u>{}</u></b></span>",
+                "today": "<span color='#eb363e'><b>{}</b></span>"
+            }
+        }
+    }
+}

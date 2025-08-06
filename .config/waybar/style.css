@@ -1,0 +1,51 @@
+@import url("colors.css");
+
+* {
+  color: @foreground;
+  font-family: "Comfortaa";
+  font-size: 12px;
+}
+
+#waybar {
+  background: transparent;
+}
+
+#waybar > box {
+  background: @background;
+  border-radius: 5px;
+  border: 2px solid @border;
+  margin: 5 5 0 5;
+}
+
+tooltip {
+  background: @background;
+}
+
+tooltip label {
+  font-family: "JetBrains Mono Nerd Font Mono";
+}
+
+#wireplumber {
+  margin-left: 20px;
+}
+
+#custom-notifications {
+  font-family: "JetBrains Mono Nerd Font Mono";
+  font-size: 20px;
+  margin-right: 20px;
+  min-width: 19px;
+}
+
+#workspaces button {
+  all: unset;
+  min-width: 30px;
+}
+
+#wireplumber.muted {
+  color: @red;
+}
+
+#tray menu {
+  background: @background;
+  color: @foreground;
+}
