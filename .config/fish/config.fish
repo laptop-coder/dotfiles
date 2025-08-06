@@ -32,7 +32,7 @@ if status is-interactive
 
     # Other
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-    alias postman="/opt/Postman/Postman --ozone-platform=wayland > /dev/null &; disown"
+    alias postman='/opt/Postman/Postman --ozone-platform=wayland > /dev/null &; disown'
     alias py 'python -q'
     alias t 'tree -aC'
 
