@@ -128,6 +128,7 @@ elif [ $1 == 5 ]; then
   fastfetch\
   blueman\
   jp2a\
+  inkscape\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
