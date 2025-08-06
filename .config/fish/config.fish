@@ -36,7 +36,7 @@ if status is-interactive
     alias py 'python -q'
     alias t 'tree -aC'
 
-    # ─────Env─variables───────────────────────────────────────────────────────
+    # ─────Env─Variables───────────────────────────────────────────────────────
 
     set -Ux GOPATH /home/arch/go # go
     set -Ux LTS_SERVICE_DEV_MODE true
