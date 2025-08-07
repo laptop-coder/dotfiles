@@ -134,6 +134,11 @@ elif [ $1 == 5 ]; then
   doxygen\
   pandoc\
   meson\
+  kmplot\
+  rofi-calc\
+  qalculate-gtk\
+  wtype\
+  rofimoji\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
