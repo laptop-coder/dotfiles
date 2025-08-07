@@ -124,11 +124,16 @@ elif [ $1 == 5 ]; then
   mkcert\
   noto-fonts-emoji\
   waybar\
-  wofi\
   fastfetch\
   blueman\
   jp2a\
   inkscape\
+  imagemagick\
+  cmake\
+  cppcheck\
+  doxygen\
+  pandoc\
+  meson\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
