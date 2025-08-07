@@ -1,0 +1,85 @@
+configuration {
+  display-drun: "Applications:";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "Comfortaa 16";
+  icon-theme: "Papirus";
+  modes: "drun,window,emoji:rofimoji";
+  show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+  bd: #505050;
+  bg-selected: #3c3836;
+  bg: #212121;
+  fg: #fcf5e4;
+
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  text-color: @fg;
+}
+
+window {
+  background-color: @bg;
+  border-color: @bd;
+  border-radius: 5px;
+  border: 2;
+  width: 50%;
+}
+
+element {
+  padding: 12 12;
+}
+
+element selected {
+  background-color: @bg-selected;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+element-icon {
+  padding: 0 10 0 0;
+  size: 24;
+}
+
+entry {
+  padding: 12;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  columns: 1;
+  lines: 10;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+}
+
+/*
+
+─────Useful─Links──────────────────────────────────────────────────────────────
+
+https://davatorium.github.io/rofi
+https://github.com/davatorium/rofi
+
+─────Other─Configurations──────────────────────────────────────────────────────
+
+https://github.com/shelepuginivan/dotfiles/releases/tag/xorg
+
+*/
