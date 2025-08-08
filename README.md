@@ -52,7 +52,7 @@
     spawn-at-startup "~/.scripts/set_random_wallpaper.sh"
     ```
 
-> [!INFO]
+> [!NOTE]
 >
 > This script creates `lock_screen/current` in the wallpapers directory, so
 > this is the blurred dimmed version of the current desktop wallpaper and you
