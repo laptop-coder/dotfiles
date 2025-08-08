@@ -101,6 +101,7 @@ window-rule {
 
 // Always open some apps maximized
 window-rule {
+  match app-id="@joplin/app-desktop"
   match app-id="^gimp"
   match app-id="chromium"
   match app-id="com.obsproject.Studio"
