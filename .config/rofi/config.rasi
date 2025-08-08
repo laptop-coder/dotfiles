@@ -3,7 +3,7 @@ configuration {
   display-window: "Windows:";
   drun-display-format: "{name}";
   font: "Comfortaa 16";
-  icon-theme: "Papirus";
+  // icon-theme: "Papirus";
   modes: "drun,window,calc:qalc,emoji:rofimoji";
   show-icons: true;
 }
