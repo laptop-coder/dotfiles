@@ -1,0 +1,298 @@
+// ─────General─Settings───────────────────────────────────────────────────────
+
+// Disable client-side window decorations
+prefer-no-csd
+
+// Path to screenshots
+screenshot-path "~/Изображения/Снимки экрана/%Y-%m-%d %H-%M-%S.png"
+
+cursor         { hide-when-typing ;}
+hotkey-overlay { skip-at-startup  ;}
+overview       { zoom 0.4         ;}
+
+environment {
+  DISPLAY ":0"
+  EDITOR "nvim"
+  QT_QPA_PLATFORM "wayland"
+}
+
+// Lock laptop when closing it's lid
+switch-events {
+    lid-close { spawn "hyprlock" ;}
+}
+
+input {
+  keyboard {
+    xkb {
+      layout "us,ru"
+      options "grp:alt_shift_toggle"
+    }
+  }
+  touchpad {
+    natural-scroll
+    tap
+  }
+}
+
+output "eDP-1" {
+  position x=1920 y=0
+  scale 1.2
+}
+
+output "HDMI-A-1" {
+  position x=0 y=0
+  scale 1.2
+  // transform "90"
+}
+
+// Set wallpapers to the overview
+layer-rule {
+  match namespace="^wallpaper$"
+  place-within-backdrop true
+}
+
+layout {
+  gaps                  5
+  center-focused-column "never" // "always" "on-overflow"
+  background-color      "transparent" // use wallpapers from the overview
+
+  focus-ring { off ;}
+  border {
+    width          2
+    active-color   "#505050"
+    inactive-color "#505050"
+    urgent-color   "#9b0000"
+  }
+
+  default-column-width { proportion 0.5 ;}
+
+  preset-column-widths {
+    proportion 0.25
+    proportion 0.5
+    proportion 0.75
+  }
+
+  preset-window-heights {
+    proportion 0.5
+    proportion 1.0
+  }
+}
+
+//─────Auto─Start──────────────────────────────────────────────────────────────
+
+// Lock before sleep or after 5 minutes of inactivity
+spawn-at-startup "~/.scripts/niri_sleep.sh"
+
+// Set random wallpaper and mark it's blured and dimmed copy as "current" for
+// hyprlock (see hyprlock config)
+spawn-at-startup "~/.scripts/set_random_wallpaper.sh"
+
+spawn-at-startup "gammastep" "-O" "3000" // blue light filter, T = 3000 K
+spawn-at-startup "waybar" // status bar
+spawn-at-startup "xwayland-satellite" // run X11 apps on Wayland
+
+//─────Windows─Rules───────────────────────────────────────────────────────────
+
+// Basic styles
+window-rule {
+  clip-to-geometry true
+  geometry-corner-radius 5
+}
+
+// Always open some apps maximized
+window-rule {
+  match app-id="^gimp"
+  match app-id="chromium"
+  match app-id="com.obsproject.Studio"
+  match app-id="org.gnome.Evolution"
+  match app-id="org.inkscape.Inkscape"
+  match app-id=r#"^chrome"# // Chrome apps
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match app-id=r#"^org\.telegram\.desktop$"#
+  match title="btop"
+
+  open-maximized true
+}
+
+// Always open some apps with 0.25 of the screen width
+window-rule {
+    match app-id="blueman-manager"
+    match app-id="qalculate-gtk"
+
+    default-column-width { proportion 0.25 ;}
+}
+
+// Always open floating
+window-rule {
+    match app-id="Rofi"
+
+    open-floating true
+}
+
+// Block out sensitive data from screencasts
+window-rule {
+  match app-id="org.gnome.Evolution"
+  match app-id="org.gnome.World.Secrets"
+  match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+  match app-id=r#"^org\.telegram\.desktop$"#
+
+  block-out-from "screencast"
+}
+
+// Indicate screencasted windows with red colors
+window-rule {
+  match is-window-cast-target=true
+
+  border {
+    active-color   "#ff656d"
+    inactive-color "#923f41"
+  }
+  shadow {
+    on
+    color "#923f4170"
+  }
+  tab-indicator {
+    active-color   "#ff656d"
+    inactive-color "#923f41"
+  }
+}
+
+// Chromium picture-in-picture
+window-rule {
+    match title="Картинка в картинке"
+
+    open-floating true
+    default-column-width { fixed 100 ;}
+}
+
+//─────Keybindings─────────────────────────────────────────────────────────────
+
+binds {
+  // Lock screen
+  F9 { spawn "hyprlock" ;}
+
+  // Close window
+  Super+Q { close-window ;}
+
+  // Exit niri
+  Super+Shift+Q { quit ;}
+
+  // Screenshots
+  Print       { screenshot-screen ;}
+  Ctrl+Print  { screenshot-window ;}
+  Shift+Print { screenshot        ;}
+  Super+Alt+S { screenshot        ;}
+
+  // Rofi
+  Super+Space       { spawn "rofi" "-show" "drun"   ;}
+  Super+Shift+Space { spawn "rofi" "-show" "window" ;}
+  Super+Ctrl+Space  { spawn "rofi" "-show" "calc"   ;}
+  Super+Alt+Space   { spawn "rofi" "-show" "emoji"  ;}
+
+  // Blue light filter, T = 3000 K
+  Super+Alt+G      { spawn "gammastep" "-O" "3000" ;}
+
+  // System managment
+  Super+Ctrl+Alt+H { spawn "systemctl" "poweroff" ;}
+  Super+Ctrl+Alt+R { spawn "systemctl" "reboot"   ;}
+  Super+Ctrl+Alt+S { spawn "systemctl" "suspend"  ;}
+
+  // Apps
+  Super+Return { spawn "alacritty"                           ;}
+  Super+E      { spawn "nautilus"                            ;}
+  Super+M      { spawn "evolution"                           ;}
+  Super+N      { spawn "joplin" "--ozone-platform=wayland"   ;}
+  Super+S      { spawn "keepassxc"                           ;}
+  Super+T      { spawn "Telegram"                            ;}
+  Super+V      { spawn "alacritty" "-T" "btop" "-e" "btop"   ;}
+  Super+W      { spawn "chromium" "--ozone-platform=wayland" ;}
+
+  // Media keys
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "10%-"        ;}
+  XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+10%"        ;}
+  XF86AudioMute         allow-when-locked=true { spawn "pamixer" "-t"                    ;}
+  XF86AudioMicMute      allow-when-locked=true { spawn "pamixer" "--default-source" "-t" ;}
+  XF86AudioLowerVolume  allow-when-locked=true { spawn "pamixer" "-d" "5"                ;}
+  XF86AudioRaiseVolume  allow-when-locked=true { spawn "pamixer" "-i" "5"                ;}
+
+  // Focus columns/windows
+  // By wheel scroll
+  Super+WheelScrollUp   { focus-column-left                        ;}
+  Super+WheelScrollDown { focus-column-right                       ;}
+  // By keys
+  Super+H               { focus-column-left                        ;}
+  Super+L               { focus-column-right                       ;}
+  Super+J               { focus-window-down                        ;}
+  Super+K               { focus-window-up                          ;}
+  Super+Ctrl+F          { switch-focus-between-floating-and-tiling ;}
+
+  // Move columns/windows
+  Super+Ctrl+H { move-column-left  ;}
+  Super+Ctrl+L { move-column-right ;}
+  Super+Ctrl+J { move-window-down  ;}
+  Super+Ctrl+K { move-window-up    ;}
+  Super+C      { center-column     ;}
+
+  // Resize columns/windows
+  Super+Minus        { set-column-width "-10%"       ;}
+  Super+Equal        { set-column-width "+10%"       ;}
+  Super+Shift+Minus  { set-window-height "-10%"      ;}
+  Super+Shift+Equal  { set-window-height "+10%"      ;}
+  Super+R            { switch-preset-column-width    ;}
+  Super+Shift+R      { switch-preset-window-height   ;}
+  Super+F            { maximize-column               ;}
+  Super+Shift+F      { fullscreen-window             ;}
+  Super+BracketLeft  { consume-or-expel-window-left  ;}
+  Super+BracketRight { consume-or-expel-window-right ;}
+  Super+Comma        { consume-window-into-column    ;}
+  Super+Period       { expel-window-from-column      ;}
+
+  // Focus workspaces
+  // By keys
+  Super+U                     { focus-workspace-down ;}
+  Super+I                     { focus-workspace-up   ;}
+  // By wheel scroll
+  Super+Shift+WheelScrollDown { focus-workspace-down ;}
+  Super+Shift+WheelScrollUp   { focus-workspace-up   ;}
+  // By numbers
+  Super+1                     { focus-workspace 1    ;}
+  Super+2                     { focus-workspace 2    ;}
+  Super+3                     { focus-workspace 3    ;}
+  Super+4                     { focus-workspace 4    ;}
+  Super+5                     { focus-workspace 5    ;}
+  Super+6                     { focus-workspace 6    ;}
+  Super+7                     { focus-workspace 7    ;}
+  Super+8                     { focus-workspace 8    ;}
+  Super+9                     { focus-workspace 9    ;}
+
+  // Move columns between workspaces
+  // By keys
+  Super+Ctrl+U { move-column-to-workspace-down ;}
+  Super+Ctrl+I { move-column-to-workspace-up   ;}
+  // By numbers
+  Super+Ctrl+1 { move-column-to-workspace 1    ;}
+  Super+Ctrl+2 { move-column-to-workspace 2    ;}
+  Super+Ctrl+3 { move-column-to-workspace 3    ;}
+  Super+Ctrl+4 { move-column-to-workspace 4    ;}
+  Super+Ctrl+5 { move-column-to-workspace 5    ;}
+  Super+Ctrl+6 { move-column-to-workspace 6    ;}
+  Super+Ctrl+7 { move-column-to-workspace 7    ;}
+  Super+Ctrl+8 { move-column-to-workspace 8    ;}
+  Super+Ctrl+9 { move-column-to-workspace 9    ;}
+
+  // Move workspaces
+  Super+Shift+U { move-workspace-down ;}
+  Super+Shift+I { move-workspace-up   ;}
+
+  // Focus monitors
+  Super+Shift+H { focus-monitor-left  ;}
+  Super+Shift+L { focus-monitor-right ;}
+  Super+Shift+J { focus-monitor-down  ;}
+  Super+Shift+K { focus-monitor-up    ;}
+
+  // Move columns between monitors
+  Super+Shift+Ctrl+H { move-column-to-monitor-left  ;}
+  Super+Shift+Ctrl+L { move-column-to-monitor-right ;}
+  Super+Shift+Ctrl+J { move-column-to-monitor-down  ;}
+  Super+Shift+Ctrl+K { move-column-to-monitor-up    ;}
+}
