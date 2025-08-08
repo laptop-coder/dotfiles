@@ -15,8 +15,8 @@
     # Geometry
     origin = top-right
     width = 316
-    height = 64
-    offset = 16x16
+    height = (0, 64)
+    offset = (16, 16)
     padding = 12
     horizontal_padding = 12
 
