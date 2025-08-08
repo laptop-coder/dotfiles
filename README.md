@@ -6,7 +6,7 @@
 
 # Wallpapers
 
-## Manage
+## Manage (`wallpapers.py`)
 
 1. Create new directory for wallpapers, e. g., `$HOME/wallpapers` and put
    wallpapers in it.
@@ -30,7 +30,7 @@
 > You can use `uv` instead of Python `venv`. Simply run the script with
 > `uv run --with pillow wallpapers.py`
 
-## Setup
+## Setup (`set_random_wallpaper.sh`)
 
 1.  This script uses `swaybg` by default. If you are using something else, e.
     g., replace the following line in the script, where
