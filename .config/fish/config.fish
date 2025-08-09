@@ -30,8 +30,11 @@ if status is-interactive
     alias gpl 'git pull'
     alias gst 'git status'
 
-    # Other
+    # Bare Git repositories
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias wp='/usr/bin/git --git-dir=$HOME/.wp/ --work-tree=$HOME/wallpapers'
+
+    # Other
     alias postman='/opt/Postman/Postman --ozone-platform=wayland > /dev/null &; disown'
     alias py 'python -q'
     alias t 'tree -aC'
