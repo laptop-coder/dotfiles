@@ -1,0 +1,3 @@
+set font 'JetBrainsMono Nerd Font 12'
+set guioptions none
+set selection-notification false
