@@ -43,7 +43,9 @@ tooltip label {
   min-width: 30px;
 }
 
-#wireplumber.muted {
+#wireplumber.muted,
+#network.disabled,
+#network.disconnected {
   color: @red;
 }
 

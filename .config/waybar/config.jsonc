@@ -9,6 +9,7 @@
     "modules-left": [
         "wireplumber",
         "battery",
+        "network",
         "tray"
     ],
 
@@ -26,6 +27,19 @@
         "format-charging": "󰂄 {capacity} %",
         "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
         "full-at": 96
+    },
+
+    "network": {
+        // "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": "   {essid} ({signalStrength} %)",
+        "format-ethernet": "   {ipaddr}/{cidr}",
+        "format-disconnected": "", // an empty format will hide the module
+        "tooltip-format": "󰊗   {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength} %)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     },
 
     // ─────Center─────────────────────────────────────────────────────────────
