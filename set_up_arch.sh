@@ -151,5 +151,13 @@ elif [ $1 == 5 ]; then
   systemctl enable docker
   usermod -aG docker arch
   reboot
+elif [ $1 == 6 ]; then
+  echo "Настройка системы..."
+  gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  git clone git@github.com:laptop-coder/fonts.git $HOME/.fonts
+  git clone git@github.com:laptop-coder/wallpapers.git $HOME/wallpapers
+  git clone --bare git@github.com:laptop-coder/dotfiles.git $HOME/.cfg
+  cfg config --local status.showUntrackedFiles no
+  cfg checkout
 fi
 
