@@ -162,11 +162,11 @@ elif [ $1 == 6 ]; then
   cfg checkout
   echo "Сборка Rofi"
   git clone https://github.com/davatorium/rofi $HOME/rofi
-  cd ./rofi
+  cd $HOME/rofi
   meson setup build -Dxcb=disabled --prefix $HOME/.local
   ninja -C build
   ninja -C build install
   cd $HOME
-  rm -r ./rofi
+  rm -r $HOME/rofi
 fi
 
