@@ -51,9 +51,6 @@ elif [ $1 == 5 ]; then
   git\
   niri\
   tree\
-  pulseaudio\
-  pulseaudio-alsa\
-  pamixer\
   alacritty\
   swaybg\
   swayidle\
@@ -98,7 +95,6 @@ elif [ $1 == 5 ]; then
   libreoffice-fresh\
   libreoffice-fresh-ru\
   tk\
-  pavucontrol\
   docker\
   docker-compose\
   audacity\
@@ -141,6 +137,7 @@ elif [ $1 == 5 ]; then
   rofimoji\
   pipewire-alsa\
   wireshark-qt\
+  pipewire-pulse\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
