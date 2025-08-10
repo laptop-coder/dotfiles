@@ -140,6 +140,7 @@ elif [ $1 == 5 ]; then
   wtype\
   rofimoji\
   pipewire-alsa\
+  wireshark-qt\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
