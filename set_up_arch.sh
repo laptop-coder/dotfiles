@@ -160,5 +160,13 @@ elif [ $1 == 6 ]; then
   git clone --bare git@github.com:laptop-coder/dotfiles.git $HOME/.cfg
   cfg config --local status.showUntrackedFiles no
   cfg checkout
+  echo "Сборка Rofi"
+  git clone https://github.com/davatorium/rofi $HOME/rofi
+  cd ./rofi
+  meson setup build -Dxcb=disabled --prefix $HOME/.local
+  ninja -C build
+  ninja -C build install
+  cd $HOME
+  rm -r ./rofi
 fi
 
