@@ -4,6 +4,29 @@
 > lead to unexpected behavior. DO NOT USE this repository (especially scripts)
 > if you are not sure what you are doing.
 
+| Type                  | Name         | Links                                                                                                                                 |
+| --------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| OS                    | `Arch Linux` | [website](https://archlinux.org)                                                                                                      |
+| Display manager (TUI) | `ly`         | [GitHub](https://github.com/fairyglade/ly)                                                                                            |
+| Lock screen           | `hyprlock`   | [GitHub](https://github.com/hyprwm/hyprlock), [config](https://github.com/laptop-coder/dotfiles/blob/main/.config/hypr/hyprlock.conf) |
+| Composer (Wayland)    | `niri`       | [GitHub](https://github.com/YaLTeR/niri), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/niri)                   |
+| Status bar            | `Waybar`     | [GitHub](https://github.com/Alexays/waybar), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/waybar)              |
+| Terminal emulator     | `Alacritty`  | [GitHub](https://github.com/alacritty/alacritty), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/alacritty)      |
+| Command shell         | `fish`       | [GitHub](https://github.com/fish-shell/fish-shell), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/fish)         |
+| Editor                | `Neovim`     | [GitHub](https://github.com/neovim/neovim), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/nvim)                 |
+| App launcher          | `Rofi`       | [GitHub](https://github.com/davatorium/rofi), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/rofi)               |
+| Notifications         | `dunst`      | [GitHub](https://github.com/dunst-project/dunst), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/dunst)          |
+| Idle manager          | `swayidle`   | [GitHub](https://github.com/swaywm/swayidle), [script](https://github.com/laptop-coder/dotfiles/blob/main/.scripts/niri_sleep.sh)     |
+| Document viewer       | `zathura`    | [GitHub](https://github.com/pwmt/zathura), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/zathura)               |
+| Image viewer          | `imv`        | [GitHub](https://sr.ht/~exec64/imv)                                                                                                   |
+| Video player          | `mpv`        | [GitHub](https://github.com/mpv-player/mpv)                                                                                           |
+| System monitor        | `Btop`       | [GitHub](https://github.com/aristocratos/btop), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/btop)             |
+| System info tool      | `Fastfetch`  | [GitHub](https://github.com/fastfetch-cli/fastfetch), [config](https://github.com/laptop-coder/dotfiles/tree/main/.config/fastfetch)  |
+
+There is also a configuration for the `kitty`
+([GitHub](https://github.com/kovidgoyal/kitty),
+[config](https://github.com/laptop-coder/dotfiles/tree/main/.config/kitty))
+
 # Wallpapers
 
 ## Manage (`wallpapers.py`)
