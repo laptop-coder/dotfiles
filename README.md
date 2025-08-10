@@ -104,3 +104,8 @@ activate the virtual environment if you use it).
 >
 > Just delete all lock screen wallpapers, and the script will create them from
 > scratch.
+
+# Links
+
+- https://github.com/YaLTeR/niri/discussions/325 — examples of `niri` setups
+- https://github.com/shelepuginivan/dotfiles — good dotfiles
