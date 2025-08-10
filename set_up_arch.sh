@@ -29,7 +29,7 @@ elif [ $1 == 2 ]; then
   grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
   grub-mkconfig -o /boot/grub/grub.cfg
   passwd
-  exit
+  echo "Выполните команду exit"
 elif [ $1 == 3 ]; then
   echo "Выполнение команд после arch-chroot..."
   umount -R /mnt
