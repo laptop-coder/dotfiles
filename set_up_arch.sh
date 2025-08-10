@@ -139,6 +139,7 @@ elif [ $1 == 5 ]; then
   qalculate-gtk\
   wtype\
   rofimoji\
+  pipewire-alsa\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
