@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/Postman/Postman --ozone-platform=wayland
+Name=Postman
+Icon=/opt/Postman/app/icons/icon_128x128.png
