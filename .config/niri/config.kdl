@@ -78,19 +78,6 @@ layout {
   }
 }
 
-//─────Auto─Start──────────────────────────────────────────────────────────────
-
-// Lock before sleep or after 5 minutes of inactivity
-spawn-at-startup "~/.scripts/niri_sleep.sh"
-
-// Set random wallpaper and mark it's blured and dimmed copy as "current" for
-// hyprlock (see hyprlock config)
-spawn-at-startup "~/.scripts/set_random_wallpaper.sh"
-
-spawn-at-startup "gammastep" "-O" "3000" // blue light filter, T = 3000 K
-spawn-at-startup "waybar" // status bar
-spawn-at-startup "xwayland-satellite" // run X11 apps on Wayland
-
 //─────Windows─Rules───────────────────────────────────────────────────────────
 
 // Basic styles

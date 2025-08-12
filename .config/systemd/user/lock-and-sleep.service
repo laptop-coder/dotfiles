@@ -1,0 +1,13 @@
+[Unit]
+Description=Lock and fall asleep
+
+[Service]
+Type=idle
+Environment=HOME=%h
+ExecStart=bash "${HOME}/.scripts/lock_and_sleep.sh"
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

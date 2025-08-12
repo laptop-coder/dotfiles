@@ -1,0 +1,13 @@
+[Unit]
+Description=Set random wallpaper to the workspace and lock screen
+
+[Service]
+Type=idle
+Environment=HOME=%h
+ExecStart=bash "${HOME}/.scripts/set_random_wallpaper.sh"
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

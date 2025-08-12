@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for the Sport Reminder
+
+[Timer]
+OnCalendar=hourly
+Unit=sport-reminder.service
+
+[Install]
+WantedBy=timers.target
+

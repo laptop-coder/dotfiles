@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for the Water Reminder
+
+[Timer]
+OnCalendar=*:30
+Unit=water-reminder.service
+
+[Install]
+WantedBy=timers.target
+
