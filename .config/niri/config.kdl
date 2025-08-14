@@ -94,6 +94,7 @@ window-rule {
   match app-id="com.obsproject.Studio"
   match app-id="org.gnome.Evolution"
   match app-id="org.inkscape.Inkscape"
+  match app-id="rawtherapee"
   match app-id=r#"^chrome"# // Chrome apps
   match app-id=r#"^org\.keepassxc\.KeePassXC$"#
   match app-id=r#"^org\.telegram\.desktop$"#
