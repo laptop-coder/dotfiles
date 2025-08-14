@@ -138,6 +138,7 @@ elif [ $1 == 5 ]; then
   pipewire-alsa\
   wireshark-qt\
   pipewire-pulse\
+  rawtherapee\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
