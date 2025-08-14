@@ -24,6 +24,7 @@ if status is-interactive
     alias ga 'git add'
     alias gc 'git commit'
     alias gd 'git diff'
+    alias gdc 'git diff --cached'
     alias gh 'git show'
     alias glg 'git log'
     alias gp 'git push'
