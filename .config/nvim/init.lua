@@ -1,11 +1,16 @@
+-- Lazy should be the first
+require('core.lazy')
+
+require('core.settings')
+require('core.keymaps')
+require('core.lsp')
+
 require('core.autoformat')
 require('core.autoindents')
 require('core.autosave')
-require('core.keymaps')
-require('core.lazy')
-require('core.lsp')
 require('core.run-code')
-require('core.settings')
+
 require('plugins.mini')
 require('plugins.nvim-cmp')
+require('plugins.nvim-tree')
 require('plugins.telescope')

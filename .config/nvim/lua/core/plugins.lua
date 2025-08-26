@@ -8,5 +8,6 @@ return {
   'echasnovski/mini.nvim',
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
+  'nvim-tree/nvim-tree.lua',
 }
 

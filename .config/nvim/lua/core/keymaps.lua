@@ -18,6 +18,11 @@ vim.keymap.set('n', 'H', 'gT', opts)
 vim.keymap.set('n', 'gn', ':bNext<CR>', opts)
 vim.keymap.set('n', 'gp', '<C-o>', opts)
 
+-- Nvim Tree
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>w', ':NvimTreeClose<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { silent = true })
+
 -- Insert current date as a markdown header
 -- vim.keymap.set(
 --     'n',
