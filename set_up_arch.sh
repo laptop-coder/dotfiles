@@ -169,5 +169,6 @@ elif [ $1 == 6 ]; then
   ninja -C build install
   cd $HOME
   rm -rf $HOME/rofi
+  mkcert -install
 fi
 
