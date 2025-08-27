@@ -42,7 +42,7 @@ if status is-interactive
     # ─────Env─Variables───────────────────────────────────────────────────────
 
     set -Ux GOPATH /home/arch/go # go
-    set -Ux GPG_TTY $(tty) # disable GUI for GPG password input
+    set -x GPG_TTY $(tty) # disable GUI for GPG password input
     set -Ux LTS_SERVICE_DEV_MODE true
 
     # ─────PATH────────────────────────────────────────────────────────────────
