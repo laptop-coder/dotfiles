@@ -1,0 +1,9 @@
+[Unit]
+Description=Blue light screen filter
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gammastep -O 3000
+
+[Install]
+WantedBy=default.target
