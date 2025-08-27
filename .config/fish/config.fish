@@ -33,7 +33,6 @@ if status is-interactive
 
     # Bare Git repositories
     alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-    alias wp='/usr/bin/git --git-dir=$HOME/.wp/ --work-tree=$HOME/wallpapers'
 
     # Other
     alias postman='/opt/Postman/Postman --ozone-platform=wayland > /dev/null &; disown'
