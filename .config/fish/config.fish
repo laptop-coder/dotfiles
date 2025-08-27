@@ -32,7 +32,7 @@ if status is-interactive
     alias gst 'git status'
 
     # Bare Git repositories
-    alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias cfg='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
     # Other
     alias postman='/opt/Postman/Postman --ozone-platform=wayland > /dev/null &; disown'
