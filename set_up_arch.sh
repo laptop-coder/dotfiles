@@ -159,8 +159,8 @@ elif [ $1 == 6 ]; then
   git clone git@github.com:laptop-coder/fonts.git $HOME/.fonts
   git clone git@github.com:laptop-coder/wallpapers.git $HOME/wallpapers
   git clone --bare git@github.com:laptop-coder/dotfiles.git $HOME/.cfg
-  cfg config --local status.showUntrackedFiles no
-  cfg checkout
+  /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME config --local status.showUntrackedFiles no
+  /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
   echo "Сборка Rofi"
   git clone https://github.com/davatorium/rofi $HOME/rofi
   cd $HOME/rofi
@@ -168,6 +168,6 @@ elif [ $1 == 6 ]; then
   ninja -C build
   ninja -C build install
   cd $HOME
-  rm -r $HOME/rofi
+  rm -rf $HOME/rofi
 fi
 
