@@ -142,6 +142,7 @@ elif [ $1 == 5 ]; then
   ntp\
   cyme\
   loupe\
+  whois\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
