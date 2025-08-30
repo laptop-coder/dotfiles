@@ -41,7 +41,7 @@ output "eDP-1" {
 
 output "HDMI-A-1" {
   position x=0 y=0
-  scale 1.5
+  scale 2.0
   // transform "90"
 }
 
