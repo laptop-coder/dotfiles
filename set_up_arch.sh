@@ -143,6 +143,7 @@ elif [ $1 == 5 ]; then
   cyme\
   loupe\
   whois\
+  gnome-text-editor\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
