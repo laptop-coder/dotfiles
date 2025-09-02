@@ -144,14 +144,19 @@ elif [ $1 == 5 ]; then
   loupe\
   whois\
   gnome-text-editor\
+  usbutils\
+  pyqt5\
+  foomatic-db\
+  hplip\
+  cups\
+  cups-filters\
   uv
   useradd -m -G wheel -s /usr/bin/fish arch
   passwd arch
   EDITOR=nvim visudo
   systemctl enable ly.service
-  systemctl start bluetooth.service
   systemctl enable bluetooth.service
-  systemctl start docker
+  systemctl enable cups
   systemctl enable docker
   usermod -aG docker arch
   reboot
