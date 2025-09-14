@@ -1,4 +1,4 @@
 #!/bin/bash
 swayidle -w \
-    timeout 300 'hyprlock' \
+    timeout 900 'hyprlock' \
     before-sleep 'hyprlock'
