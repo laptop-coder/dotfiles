@@ -14,6 +14,16 @@ vim.opt.autoindent = true
 -- Lines width
 vim.opt.textwidth = 79
 vim.cmd('set colorcolumn=79')
+vim.api.nvim_create_autocmd(
+  'FileType',
+  {
+    pattern = 'typst',
+    callback = function()
+      vim.opt.textwidth = 0
+      vim.cmd('set colorcolumn=0')
+    end,
+  }
+)
 
 -- Other
 vim.opt.scrolloff = 7
